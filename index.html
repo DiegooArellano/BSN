@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BSN | Bufete en Soluciones de Normatividad S.A. de C.V.</title>
+  <meta name="description" content="Unidad de Información Comercial acreditada por la EMA y aprobada por la DGN. Evaluación de etiquetas, instructivos, garantías, dictámenes y constancias NOM." />
+
+  <!-- Google Fonts: Plus Jakarta Sans + Cormorant Garamond (para el logo BSN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serifLogo: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            bsn: {
+              navy: '#0A192F',
+              primary: '#0C4178',
+              blue: '#1E3A8A',
+              accent: '#0284C7',
+              light: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-sky-600 selection:text-white flex flex-col min-h-screen">
+
+  <!-- ==========================================
+       TOPBAR INSTITUCIONAL
+       ========================================== -->
+  <div class="bg-bsn-navy text-slate-300 text-xs border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-400"></i>
+          Unidad de Información Comercial Acreditada (EMA / DGN)
+        </span>
+        <span class="hidden md:inline text-slate-400">Bufete en Soluciones de Normatividad S.A. de C.V.</span>
+      </div>
+
+      <div class="flex items-center gap-4 ml-auto">
+        <span class="text-slate-400 hidden sm:inline">¡Llámanos!</span>
+        <a href="tel:5552116754" class="hover:text-white transition-colors inline-flex items-center gap-1 font-medium">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-sky-400"></i>
+          (55) 5211-6754
+        </a>
+        <span class="text-slate-600">/</span>
+        <a href="tel:5571550916" class="hover:text-white transition-colors inline-flex items-center gap-1 font-medium">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-sky-400"></i>
+          (55) 7155-0916
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       HEADER / NAVBAR CON ESCUDO BSN
+       ========================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-24">
+        
+        <!-- Logo Oficial + Escudo BSN (SVG Vectorial Transparente) -->
+        <button onclick="navigateTo('inicio')" class="flex items-center text-left group focus:outline-none py-2" title="Ir al Inicio - Bufete en Soluciones de Normatividad">
+          <svg class="h-14 sm:h-16 w-auto transition-transform duration-200 group-hover:scale-[1.02]" viewBox="0 0 680 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo BSN Bufete en Soluciones de Normatividad">
+            <!-- Curva decorativa característica en la letra B -->
+            <path d="M18 116 C 42 92, 75 88, 125 92" stroke="#0C4178" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <!-- Siglas BSN en Serif Clásico Azul Real -->
+            <text x="42" y="138" fill="#0C4178" font-family="'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="148" letter-spacing="4">BSN</text>
+            <!-- Escudo Geométrico Derecha (Octagrama con ejes internos) -->
+            <g transform="translate(495, 80)" stroke="#0F294A" stroke-width="3.2" fill="none" stroke-linejoin="miter">
+              <rect x="-48" y="-48" width="96" height="96" />
+              <rect x="-48" y="-48" width="96" height="96" transform="rotate(45)" />
+              <line x1="-48" y1="0" x2="48" y2="0" />
+              <line x1="0" y1="-48" x2="0" y2="48" />
+              <line x1="-48" y1="-48" x2="48" y2="48" />
+              <line x1="-48" y1="48" x2="48" y2="-48" />
+            </g>
+            <!-- Leyenda inferior -->
+            <text x="45" y="185" fill="#1E293B" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="25.5" letter-spacing="0.6">Bufete en Soluciones de Normatividad</text>
+          </svg>
+        </button>
+
+        <!-- Navegación Desktop -->
+        <nav class="hidden lg:flex items-center gap-1" aria-label="Menú Principal">
+          <button onclick="navigateTo('inicio')" data-nav="inicio" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold transition-all">
+            Inicio
+          </button>
+          <button onclick="navigateTo('quienes-somos')" data-nav="quienes-somos" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold transition-all">
+            ¿Quiénes Somos?
+          </button>
+          <button onclick="navigateTo('servicios')" data-nav="servicios" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold transition-all">
+            Servicios
+          </button>
+          <button onclick="navigateTo('normas')" data-nav="normas" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-1.5">
+            <span>Normas</span>
+            <span class="px-1.5 py-0.5 text-[10px] font-bold bg-sky-100 text-sky-800 rounded-full">9 NOM</span>
+          </button>
+          <button onclick="navigateTo('imparcialidad')" data-nav="imparcialidad" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold transition-all">
+            Declaración Imparcialidad
+          </button>
+          <button onclick="navigateTo('contacto')" data-nav="contacto" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold transition-all">
+            Contacto
+          </button>
+        </nav>
+
+        <!-- Botón Sistema en Línea + Mobile Trigger -->
+        <div class="flex items-center gap-3">
+          <button onclick="openSistemaModal()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-bsn-primary hover:bg-bsn-navy text-white shadow-sm hover:shadow transition-all">
+            <i data-lucide="lock" class="w-4 h-4 text-sky-300"></i>
+            <span>Sistema en Línea</span>
+          </button>
+
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Abrir menú">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-1.5 shadow-xl">
+      <button onclick="navigateTo('inicio'); toggleMobileMenu();" data-nav-mobile="inicio" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Inicio</button>
+      <button onclick="navigateTo('quienes-somos'); toggleMobileMenu();" data-nav-mobile="quienes-somos" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">¿Quiénes Somos?</button>
+      <button onclick="navigateTo('servicios'); toggleMobileMenu();" data-nav-mobile="servicios" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Servicios</button>
+      <button onclick="navigateTo('normas'); toggleMobileMenu();" data-nav-mobile="normas" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+        <span>Normas Acreditadas</span>
+        <span class="px-2 py-0.5 text-xs font-bold bg-sky-100 text-sky-800 rounded-full">9 NOM</span>
+      </button>
+      <button onclick="navigateTo('imparcialidad'); toggleMobileMenu();" data-nav-mobile="imparcialidad" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Declaración de Imparcialidad</button>
+      <button onclick="navigateTo('privacidad'); toggleMobileMenu();" data-nav-mobile="privacidad" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Aviso de Privacidad</button>
+      <button onclick="navigateTo('contacto'); toggleMobileMenu();" data-nav-mobile="contacto" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Contacto</button>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       CONTENEDOR PRINCIPAL DE SUBPÁGINAS
+       ========================================== -->
+  <main class="flex-grow">
+
+    <!-- ==========================================
+         SUBPÁGINA 1: INICIO (HOME)
+         ========================================== -->
+    <section id="view-inicio" data-page="inicio" class="page-view">
+      
+      <!-- HERO CARRUSEL DE 3 SLIDES -->
+      <div class="relative bg-bsn-navy overflow-hidden h-[540px] sm:h-[600px]">
+        
+        <!-- Slide 1 -->
+        <div class="carousel-slide active absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80" alt="Inspección y logística de mercancías" class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-r from-bsn-navy/95 via-bsn-navy/85 to-bsn-navy/40"></div>
+          <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="max-w-2xl text-white space-y-6">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-semibold tracking-wide uppercase">
+                <i data-lucide="award" class="w-4 h-4"></i>
+                Unidad de Información Comercial Acreditada
+              </div>
+              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                Bufete en Soluciones de Normatividad, S.A. de C.V.
+              </h1>
+              <p class="text-slate-200 text-base sm:text-lg leading-relaxed">
+                Formada por un grupo de profesionales acreditados por la <strong class="text-white">EMA (Entidad Mexicana de Acreditación)</strong> y aprobados por la <strong class="text-white">DGN (Dirección General de Normas)</strong>: comprometidos por nuestro trabajo para satisfacer las necesidades de nuestros clientes.
+              </p>
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button onclick="navigateTo('contacto')" class="px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm shadow-lg shadow-sky-500/25 transition-all inline-flex items-center gap-2">
+                  <span>Ponte en contacto</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="openSistemaModal()" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm backdrop-blur-sm transition-all inline-flex items-center gap-2">
+                  <i data-lucide="external-link" class="w-4 h-4 text-sky-300"></i>
+                  <span>Sistema en Línea</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1920&q=80" alt="Evaluación de etiquetado y control de calidad" class="w-full h-full object-cover object-center" />
+          <div class="absolute inset-0 bg-gradient-to-r from-bsn-navy/95 via-bsn-navy/85 to-bsn-navy/40"></div>
+          <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="max-w-2xl text-white space-y-6">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold tracking-wide uppercase">
+                <i data-lucide="file-check-2" class="w-4 h-4"></i>
+                Dictámenes y Constancias Oficiales
+              </div>
+              <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                Evaluación de Etiquetas, Instructivos y Garantías
+              </h2>
+              <p class="text-slate-200 text-base sm:text-lg leading-relaxed">
+                Aseguramos el cumplimiento normativo de tus productos nacionales e importados mediante la emisión ágil de <strong class="text-white">Dictámenes de Cumplimiento</strong> y <strong class="text-white">Constancias de Conformidad</strong>.
+              </p>
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button onclick="navigateTo('servicios')" class="px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm shadow-lg transition-all inline-flex items-center gap-2">
+                  <span>Ver Nuestros Servicios</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="navigateTo('normas')" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm backdrop-blur-sm transition-all">
+                  Consultar las 9 NOMs
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80" alt="Comercio exterior y normatividad mexicana" class="w-full h-full object-cover object-center" />
+          <div class="absolute inset-0 bg-gradient-to-r from-bsn-navy/95 via-bsn-navy/85 to-bsn-navy/40"></div>
+          <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="max-w-2xl text-white space-y-6">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wide uppercase">
+                <i data-lucide="layers" class="w-4 h-4"></i>
+                Cobertura Multidivisión en 9 NOMs
+              </div>
+              <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                Respaldo Técnico para Importación y Comercialización
+              </h2>
+              <p class="text-slate-200 text-base sm:text-lg leading-relaxed">
+                Acreditados en textiles, calzado, electrónicos, juguetes, alimentos, cosméticos, bebidas alcohólicas, aseo doméstico y etiquetado general.
+              </p>
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button onclick="navigateTo('normas')" class="px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm shadow-lg transition-all inline-flex items-center gap-2">
+                  <span>Explorar Catálogo NOM</span>
+                  <i data-lucide="search" class="w-4 h-4"></i>
+                </button>
+                <a href="tel:5552116754" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm backdrop-blur-sm transition-all inline-flex items-center gap-2">
+                  <i data-lucide="phone" class="w-4 h-4 text-sky-300"></i>
+                  <span>(55) 5211-6754</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles del Carrusel -->
+        <div class="absolute bottom-6 inset-x-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <button onclick="goToSlide(0)" class="carousel-dot w-8 h-2.5 rounded-full bg-sky-400 transition-all" aria-label="Slide 1"></button>
+            <button onclick="goToSlide(1)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all" aria-label="Slide 2"></button>
+            <button onclick="goToSlide(2)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all" aria-label="Slide 3"></button>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="prevSlide()" class="p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white border border-white/20 backdrop-blur-sm transition-all" aria-label="Anterior">
+              <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <button onclick="nextSlide()" class="p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white border border-white/20 backdrop-blur-sm transition-all" aria-label="Siguiente">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FRANJA DE ACREDITACIÓN Y CONFIANZA -->
+      <div class="bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div class="p-3 rounded-xl bg-bsn-primary text-white shrink-0">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-sm">Acreditados por la EMA</h3>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Entidad Mexicana de Acreditación con competencia técnica demostrada.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div class="p-3 rounded-xl bg-bsn-primary text-white shrink-0">
+              <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-sm">Aprobados por la DGN</h3>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Dirección General de Normas de la Secretaría de Economía.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div class="p-3 rounded-xl bg-bsn-primary text-white shrink-0">
+              <i data-lucide="laptop" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-sm">Sistema en Línea 24/7</h3>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">Gestión digital y seguimiento oportuno de solicitudes, dictámenes y constancias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESUMEN DE SERVICIOS EN INICIO -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600">Nuestros Servicios</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Soluciones Integrales en Información Comercial</h2>
+          </div>
+          <button onclick="navigateTo('servicios')" class="inline-flex items-center gap-2 text-sm font-bold text-bsn-primary hover:text-sky-600">
+            <span>Ver detalle de servicios</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Servicio 1 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Evaluación de etiquetas, instructivos y garantías" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 bg-bsn-navy/90 text-white text-xs font-bold px-3 py-1 rounded-full">01</div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Evaluación de etiquetas, instructivos y garantías</h3>
+                <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                  Revisión técnica minuciosa para verificar que tus productos cumplan con los requisitos de las Normas Oficiales Mexicanas aplicables.
+                </p>
+              </div>
+              <button onclick="solicitarServicio('Evaluación de etiquetas, instructivos y garantías')" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-bsn-primary hover:text-sky-600">
+                <span>Solicitar evaluación</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Servicio 2 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Emisión de dictámenes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 bg-bsn-navy/90 text-white text-xs font-bold px-3 py-1 rounded-full">02</div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Emisión de dictámenes</h3>
+                <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                  Dictámenes de cumplimiento de información comercial para despacho aduanero y verificación en almacén fiscalizado o domicilio.
+                </p>
+              </div>
+              <button onclick="solicitarServicio('Emisión de dictámenes')" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-bsn-primary hover:text-sky-600">
+                <span>Solicitar dictamen</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Servicio 3 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Emisión de constancias" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 bg-bsn-navy/90 text-white text-xs font-bold px-3 py-1 rounded-full">03</div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Emisión de constancias</h3>
+                <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                  Constancias de conformidad para diseños de etiquetas, envases, empaques, instructivos y pólizas de garantía previo a comercialización.
+                </p>
+              </div>
+              <button onclick="solicitarServicio('Emisión de constancias')" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-bsn-primary hover:text-sky-600">
+                <span>Solicitar constancia</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISTA PREVIA DE LAS 9 NORMAS EN INICIO -->
+      <div class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Alcance de Acreditación</span>
+              <h2 class="text-3xl font-extrabold mt-1">Normas Oficiales Mexicanas Acreditadas</h2>
+              <p class="text-slate-300 text-sm mt-2">En Bufete en Soluciones de Normatividad, S.A. de C.V. estamos acreditados en las siguientes 9 Normas:</p>
+            </div>
+            <button onclick="navigateTo('normas')" class="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition-all shrink-0">
+              Abrir Buscador de Normas
+            </button>
+          </div>
+
+          <div id="home-norms-preview" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+        </div>
+      </div>
+
+      <!-- CLIENTES SATISFECHOS & BANNER DE CONTACTO -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-gradient-to-br from-bsn-primary to-bsn-navy rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div class="max-w-xl space-y-3">
+            <span class="px-3 py-1 rounded-full bg-white/10 text-sky-300 text-xs font-bold uppercase tracking-wider">Clientes Satisfechos</span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold">¿Necesitas asesoría en etiquetado o un dictamen urgente?</h3>
+            <p class="text-slate-200 text-sm sm:text-base">
+              Nuestro equipo acreditado por la EMA y aprobado por la DGN está listo para atender tus requerimientos normativos.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 shrink-0">
+            <button onclick="navigateTo('contacto')" class="px-6 py-3.5 rounded-xl bg-white text-bsn-navy font-bold text-sm hover:bg-sky-50 transition-all shadow">
+              Ponte en contacto
+            </button>
+            <a href="tel:5552116754" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm transition-all inline-flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-sky-300"></i>
+              <span>(55) 5211-6754</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         SUBPÁGINA 2: ¿QUIÉNES SOMOS?
+         ========================================== -->
+    <section id="view-quienes-somos" data-page="quienes-somos" class="page-view hidden">
+      <div class="bg-bsn-navy text-white py-14 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Institucional</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">¿Quiénes Somos?</h1>
+          <p class="text-slate-300 text-sm mt-2">Unidad de Información Comercial acreditada y aprobada en México.</p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-bsn-primary text-xs font-bold">
+              <i data-lucide="building-2" class="w-4 h-4"></i>
+              Unidad de Información Comercial
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              Bufete en Soluciones de Normatividad, S.A. de C.V.
+            </h2>
+            <p class="text-slate-700 text-base leading-relaxed">
+              Formada por un grupo de profesionales acreditados por la <strong>EMA (Entidad Mexicana de Acreditación)</strong> y aprobados por la <strong>DGN (Dirección General de Normas)</strong>: Comprometidos por nuestro trabajo para satisfacer las necesidades de nuestros clientes.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                <i data-lucide="check-circle" class="w-6 h-6 text-sky-600 mb-2"></i>
+                <h3 class="font-bold text-slate-900 text-sm">Rigor Normativo</h3>
+                <p class="text-xs text-slate-600 mt-1">Evaluaciones apegadas estrictamente a las Normas Oficiales Mexicanas vigentes.</p>
+              </div>
+              <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                <i data-lucide="scale" class="w-6 h-6 text-sky-600 mb-2"></i>
+                <h3 class="font-bold text-slate-900 text-sm">Imparcialidad y Confidencialidad</h3>
+                <p class="text-xs text-slate-600 mt-1">Operamos bajo estrictos principios éticos y de independencia técnica.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta con el Escudo Oficial de BSN -->
+          <div class="lg:col-span-5">
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-lg text-center space-y-6">
+              <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 flex items-center justify-center">
+                <svg class="w-full max-w-[320px] h-auto" viewBox="0 0 680 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 116 C 42 92, 75 88, 125 92" stroke="#0C4178" stroke-width="8" stroke-linecap="round" fill="none"/>
+                  <text x="42" y="138" fill="#0C4178" font-family="'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="148" letter-spacing="4">BSN</text>
+                  <g transform="translate(495, 80)" stroke="#0F294A" stroke-width="3.2" fill="none">
+                    <rect x="-48" y="-48" width="96" height="96" />
+                    <rect x="-48" y="-48" width="96" height="96" transform="rotate(45)" />
+                    <line x1="-48" y1="0" x2="48" y2="0" />
+                    <line x1="0" y1="-48" x2="0" y2="48" />
+                    <line x1="-48" y1="-48" x2="48" y2="48" />
+                    <line x1="-48" y1="48" x2="48" y2="-48" />
+                  </g>
+                  <text x="45" y="185" fill="#1E293B" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="25.5" letter-spacing="0.6">Bufete en Soluciones de Normatividad</text>
+                </svg>
+              </div>
+              <div class="text-left space-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600">
+                <div class="flex justify-between py-1">
+                  <span class="font-semibold text-slate-800">Razón Social:</span>
+                  <span>Bufete en Soluciones de Normatividad S.A. de C.V.</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="font-semibold text-slate-800">Figura:</span>
+                  <span>Unidad de Información Comercial</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="font-semibold text-slate-800">Acreditación / Aprobación:</span>
+                  <span>EMA / DGN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SUBPÁGINA 3: SERVICIOS
+         ========================================== -->
+    <section id="view-servicios" data-page="servicios" class="page-view hidden">
+      <div class="bg-bsn-navy text-white py-14 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Unidad de Información Comercial</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">Nuestros Servicios</h1>
+          <p class="text-slate-300 text-sm mt-2">Evaluación de etiquetas, instructivos y garantías, emisión de dictámenes y emisión de constancias.</p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80" alt="Evaluación de etiquetas" class="h-52 w-full object-cover" />
+            <div class="p-7 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="text-xs font-bold text-sky-600 uppercase">Servicio 01</span>
+                <h2 class="text-xl font-bold text-slate-900 mt-1">Evaluación de etiquetas, instructivos y garantías</h2>
+                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                  Analizamos el diseño y contenido de tus etiquetas comerciales, manuales de operación y pólizas de garantía para asegurar su apego total a las NOM acreditadas.
+                </p>
+              </div>
+              <button onclick="solicitarServicio('Evaluación de etiquetas, instructivos y garantías')" class="w-full py-3 rounded-xl bg-bsn-primary hover:bg-bsn-navy text-white font-semibold text-sm transition-all">
+                Cotizar Evaluación
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="Emisión de dictámenes" class="h-52 w-full object-cover" />
+            <div class="p-7 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="text-xs font-bold text-sky-600 uppercase">Servicio 02</span>
+                <h2 class="text-xl font-bold text-slate-900 mt-1">Emisión de dictámenes</h2>
+                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                  Expedición de Dictámenes de Cumplimiento de información comercial para la importación y liberación aduanal de mercancías con verificación en sitio.
+                </p>
+              </div>
+              <button onclick="solicitarServicio('Emisión de dictámenes')" class="w-full py-3 rounded-xl bg-bsn-primary hover:bg-bsn-navy text-white font-semibold text-sm transition-all">
+                Solicitar Dictamen
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80" alt="Emisión de constancias" class="h-52 w-full object-cover" />
+            <div class="p-7 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="text-xs font-bold text-sky-600 uppercase">Servicio 03</span>
+                <h2 class="text-xl font-bold text-slate-900 mt-1">Emisión de constancias</h2>
+                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                  Emisión de Constancias de Conformidad de información comercial que avalan que tus productos cumplen con los requisitos antes de salir al punto de venta.
+                </p>
+              </div>
+              <button onclick="solicitarServicio('Emisión de constancias')" class="w-full py-3 rounded-xl bg-bsn-primary hover:bg-bsn-navy text-white font-semibold text-sm transition-all">
+                Solicitar Constancia
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SUBPÁGINA 4: CATÁLOGO DE NORMAS (9 NOMs)
+         ========================================== -->
+    <section id="view-normas" data-page="normas" class="page-view hidden">
+      <div class="bg-bsn-navy text-white py-14 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Catálogo Oficial</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">Normas Acreditadas</h1>
+          <p class="text-slate-300 text-sm mt-2">
+            En Bufete en Soluciones de Normatividad, S.A. de C.V. estamos acreditados en las siguientes Normas:
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+        
+        <!-- Barra de búsqueda y filtros por sector -->
+        <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+          <div class="relative flex-1">
+            <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input
+              id="norm-search-input"
+              type="text"
+              oninput="filterNorms()"
+              placeholder="Buscar por código (ej. NOM-051, NOM-004) o producto (textil, alimentos, electrónica...)"
+              class="w-full pl-11 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-bsn-primary"
+            />
+          </div>
+
+          <div class="flex flex-wrap items-center gap-1.5" id="norm-category-filters">
+            <button onclick="setNormCategory('all')" data-cat="all" class="norm-cat-btn active px-3.5 py-2 rounded-xl text-xs font-bold transition-all">Todas (9)</button>
+            <button onclick="setNormCategory('Textil y Calzado')" data-cat="Textil y Calzado" class="norm-cat-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all">Textil y Calzado</button>
+            <button onclick="setNormCategory('Alimentos y Bebidas')" data-cat="Alimentos y Bebidas" class="norm-cat-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all">Alimentos y Bebidas</button>
+            <button onclick="setNormCategory('Electrónica y Hogar')" data-cat="Electrónica y Hogar" class="norm-cat-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all">Electrónica y Hogar</button>
+            <button onclick="setNormCategory('Salud y General')" data-cat="Salud y General" class="norm-cat-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all">Cosméticos, Juegos y General</button>
+          </div>
+        </div>
+
+        <!-- Grid de las 9 Normas -->
+        <div id="norms-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SUBPÁGINA 5: DECLARACIÓN DE IMPARCIALIDAD
+         ========================================== -->
+    <section id="view-imparcialidad" data-page="imparcialidad" class="page-view hidden">
+      <div class="bg-bsn-navy text-white py-14 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Compromiso Ético y Normativo</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">Declaración de Imparcialidad</h1>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-sm space-y-6">
+          <div class="flex items-center gap-3 text-bsn-primary">
+            <i data-lucide="scale" class="w-8 h-8"></i>
+            <h2 class="text-xl font-bold text-slate-900">Política de Imparcialidad e Independencia</h2>
+          </div>
+          <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+            La Alta Dirección y todo el personal de <strong>Bufete en Soluciones de Normatividad, S.A. de C.V. (BSN)</strong>, en su carácter de Unidad de Información Comercial acreditada por la Entidad Mexicana de Acreditación (EMA) y aprobada por la Dirección General de Normas (DGN), declara su compromiso absoluto con la imparcialidad en todas sus actividades de evaluación de la conformidad.
+          </p>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+              <span>Las decisiones de inspección se fundamentan exclusivamente en evidencias objetivas de cumplimiento con las Normas Oficiales Mexicanas.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+              <span>Ninguna presión comercial, financiera o de otra índole compromete la objetividad técnica de nuestros dictámenes y constancias.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+              <span>Identificamos y mitigamos de forma continua cualquier posible conflicto de interés del personal interno o externo.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SUBPÁGINA 6: AVISO DE PRIVACIDAD
+         ========================================== -->
+    <section id="view-privacidad" data-page="privacidad" class="page-view hidden">
+      <div class="bg-bsn-navy text-white py-14 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Cumplimiento Legal</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">Aviso de Privacidad</h1>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-sm space-y-5 text-sm text-slate-700 leading-relaxed">
+          <h2 class="text-xl font-bold text-slate-900">Protección de Datos Personales</h2>
+          <p>
+            <strong>Bufete en Soluciones de Normatividad, S.A. de C.V.</strong> es responsable del uso y protección de sus datos personales recabados para la prestación de servicios de evaluación de etiquetas, instructivos, garantías, emisión de dictámenes y constancias de conformidad.
+          </p>
+          <p>
+            La información proporcionada por nuestros clientes es tratada bajo estricta confidencialidad y utilizada únicamente para gestionar sus solicitudes ante nuestra Unidad de Información Comercial, el Sistema en Línea y las autoridades competentes cuando así lo requiera la normatividad aplicable.
+          </p>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
+            Para dudas o ejercicio de derechos ARCO, comuníquese directamente a nuestros teléfonos oficiales <strong>(55) 5211-6754</strong> y <strong>(55) 7155-0916</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SUBPÁGINA 7: CONTACTO
+         ========================================== -->
+    <section id="view-contacto" data-page="contacto" class="page-view hidden">
+      <div class="bg-bsn-navy text-white py-14 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Atención Directa</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">Ponte en contacto</h1>
+          <p class="text-slate-300 text-sm mt-2">¡Llámanos! (55) 5211-6754 / (55) 7155-0916 o envíanos tu requerimiento normativo.</p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Datos de Contacto -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-5">
+              <h2 class="text-lg font-bold text-slate-900">Teléfonos Oficiales</h2>
+              <div class="space-y-3">
+                <a href="tel:5552116754" class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200 transition-all">
+                  <div class="p-2.5 rounded-lg bg-bsn-primary text-white">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs text-slate-500 block">Línea Principal</span>
+                    <span class="text-base font-bold text-slate-900">(55) 5211-6754</span>
+                  </div>
+                </a>
+
+                <a href="tel:5571550916" class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200 transition-all">
+                  <div class="p-2.5 rounded-lg bg-bsn-primary text-white">
+                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs text-slate-500 block">Línea Secundaria</span>
+                    <span class="text-base font-bold text-slate-900">(55) 7155-0916</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de Solicitud -->
+          <div class="lg:col-span-7">
+            <form id="contact-form" onsubmit="handleContactSubmit(event)" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+              <h2 class="text-xl font-bold text-slate-900">Solicitar Cotización o Evaluación NOM</h2>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Nombre completo *</label>
+                  <input id="form-nombre" type="text" required placeholder="Tu nombre" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-bsn-primary" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Empresa / Razón Social</label>
+                  <input id="form-empresa" type="text" placeholder="Nombre de tu empresa" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-bsn-primary" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Teléfono *</label>
+                  <input id="form-telefono" type="tel" required placeholder="(55) 0000 0000" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-bsn-primary" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Servicio o Norma de interés *</label>
+                  <select id="form-asunto" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-bsn-primary">
+                    <option value="Evaluación de etiquetas, instructivos y garantías">Evaluación de etiquetas, instructivos y garantías</option>
+                    <option value="Emisión de dictámenes">Emisión de dictámenes</option>
+                    <option value="Emisión de constancias">Emisión de constancias</option>
+                    <option value="NOM-004-SE-2021 (Textiles y prendas)">NOM-004-SE-2021 (Textiles y prendas)</option>
+                    <option value="NOM-015-SCFI-2007 (Juguetes)">NOM-015-SCFI-2007 (Juguetes)</option>
+                    <option value="NOM-020-SCFI-1997 (Cueros y calzado)">NOM-020-SCFI-1997 (Cueros y calzado)</option>
+                    <option value="NOM-024-SCFI-2013 (Electrónicos)">NOM-024-SCFI-2013 (Electrónicos)</option>
+                    <option value="NOM-050-SCFI-2004 (Etiquetado general)">NOM-050-SCFI-2004 (Etiquetado general)</option>
+                    <option value="NOM-051-SCFI/SSAI-2010 (Alimentos y bebidas)">NOM-051-SCFI/SSAI-2010 (Alimentos y bebidas)</option>
+                    <option value="NOM-141-SSA1/SCFI-2012 (Cosméticos)">NOM-141-SSA1/SCFI-2012 (Cosméticos)</option>
+                    <option value="NOM-142-SSA1/SCFI-2014 (Bebidas alcohólicas)">NOM-142-SSA1/SCFI-2014 (Bebidas alcohólicas)</option>
+                    <option value="NOM-189-SSA1/SCFI-2018 (Aseo doméstico)">NOM-189-SSA1/SCFI-2018 (Aseo doméstico)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Mensaje o detalles del producto *</label>
+                <textarea id="form-mensaje" rows="4" required placeholder="Indícanos qué producto deseas evaluar o importar..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-bsn-primary"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-bsn-primary hover:bg-bsn-navy text-white font-bold text-sm shadow transition-all">
+                Enviar Solicitud por WhatsApp / Contacto
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER CORPORATIVO CON ESCUDO CLARO
+       ========================================== -->
+  <footer class="bg-bsn-navy text-slate-400 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Columna 1: Logo BSN Versión Blanca/Clara -->
+        <div class="md:col-span-2 space-y-4">
+          <svg class="h-14 w-auto" viewBox="0 0 680 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 116 C 42 92, 75 88, 125 92" stroke="#38BDF8" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <text x="42" y="138" fill="#FFFFFF" font-family="'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="148" letter-spacing="4">BSN</text>
+            <g transform="translate(495, 80)" stroke="#38BDF8" stroke-width="3.2" fill="none">
+              <rect x="-48" y="-48" width="96" height="96" />
+              <rect x="-48" y="-48" width="96" height="96" transform="rotate(45)" />
+              <line x1="-48" y1="0" x2="48" y2="0" />
+              <line x1="0" y1="-48" x2="0" y2="48" />
+              <line x1="-48" y1="-48" x2="48" y2="48" />
+              <line x1="-48" y1="48" x2="48" y2="-48" />
+            </g>
+            <text x="45" y="185" fill="#CBD5E1" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="25.5" letter-spacing="0.6">Bufete en Soluciones de Normatividad</text>
+          </svg>
+          <p class="text-xs text-slate-400 max-w-md leading-relaxed">
+            Unidad de Información Comercial formada por un grupo de profesionales acreditados por la EMA y aprobados por la DGN.
+          </p>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Secciones</h4>
+          <ul class="space-y-2 text-xs">
+            <li><button onclick="navigateTo('inicio')" class="hover:text-white">Inicio</button></li>
+            <li><button onclick="navigateTo('quienes-somos')" class="hover:text-white">¿Quiénes Somos?</button></li>
+            <li><button onclick="navigateTo('servicios')" class="hover:text-white">Servicios</button></li>
+            <li><button onclick="navigateTo('normas')" class="hover:text-white">Normas Acreditadas</button></li>
+            <li><button onclick="openSistemaModal()" class="hover:text-white text-sky-400">Sistema en Línea</button></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Legal y Contacto -->
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Legal y Contacto</h4>
+          <ul class="space-y-2 text-xs">
+            <li><button onclick="navigateTo('imparcialidad')" class="hover:text-white">Declaración de Imparcialidad</button></li>
+            <li><button onclick="navigateTo('privacidad')" class="hover:text-white">Aviso de Privacidad</button></li>
+            <li class="pt-1 text-slate-300">(55) 5211-6754 / (55) 7155-0916</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs gap-4">
+        <p>Copyright © 2026 Bufete en Soluciones de Normatividad S.A. de C.V. - Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       BOTÓN FLOTANTE DE WHATSAPP (INFERIOR IZQUIERDO)
+       ========================================== -->
+  <div class="fixed bottom-6 left-6 z-50">
+    <div id="wa-popup" class="hidden mb-3 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="bg-[#075E54] text-white p-4 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+          <div>
+            <p class="text-xs font-bold">Atención BSN Normatividad</p>
+            <p class="text-[10px] text-emerald-100">Respuesta inmediata en horario hábil</p>
+          </div>
+        </div>
+        <button onclick="toggleWaPopup()" class="text-white/80 hover:text-white">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div class="p-4 bg-slate-50 space-y-3">
+        <p class="text-xs text-slate-700 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+          ¡Hola! ¿En qué Norma Oficial Mexicana (NOM), dictamen o constancia podemos apoyarte hoy?
+        </p>
+        <input id="wa-quick-msg" type="text" placeholder="Escribe tu consulta..." class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+        <button onclick="sendWhatsApp()" class="w-full py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow">
+          <span>Iniciar chat en WhatsApp</span>
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+    </div>
+
+    <button
+      onclick="toggleWaPopup()"
+      class="group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white shadow-xl hover:scale-105 transition-all focus:outline-none"
+      aria-label="Contactar por WhatsApp"
+    >
+      <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-40 animate-ping"></span>
+      <svg class="w-7 h-7 relative fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.625.846 5.059 2.284 7.033l-1.492 5.447 5.601-1.469c1.905 1.151 4.14 1.815 6.533 1.815 6.627 0 12-5.373 12-12s-5.373-12-11.926-12.826z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ==========================================
+       MODAL DE SISTEMA EN LÍNEA
+       ========================================== -->
+  <div id="sistema-modal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
+      <div class="flex items-center justify-between">
+        <span class="px-3 py-1 rounded-full bg-sky-100 text-bsn-primary text-xs font-bold">Plataforma Digital BSN</span>
+        <button onclick="closeSistemaModal()" class="text-slate-400 hover:text-slate-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <h3 class="text-xl font-extrabold text-slate-900">Acceso a Sistema en Línea</h3>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Ingresa al portal de clientes para gestionar solicitudes de dictámenes, constancias y consultar el estatus de tus evaluaciones normativas.
+      </p>
+      <div class="space-y-3 pt-2">
+        <a href="https://uva-bsn.com.mx/sistema-en-l%C3%ADnea" target="_blank" rel="noopener" class="w-full py-3 rounded-xl bg-bsn-primary hover:bg-bsn-navy text-white font-bold text-sm flex items-center justify-center gap-2 transition-all">
+          <span>Ir al Portal Sistema en Línea</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+        <button onclick="closeSistemaModal()" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition-all">
+          Cerrar ventana
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       BANNER DE COOKIES
+       ========================================== -->
+  <div id="cookie-banner" class="hidden fixed bottom-4 right-4 z-40 max-w-sm bg-slate-900 text-white p-5 rounded-2xl shadow-2xl border border-slate-700 space-y-3">
+    <div class="flex items-center gap-2 text-sky-400 font-bold text-xs">
+      <i data-lucide="cookie" class="w-4 h-4"></i>
+      <span>Este sitio web utiliza cookies</span>
+    </div>
+    <p class="text-[11px] text-slate-300 leading-relaxed">
+      Usamos cookies para analizar el tráfico del sitio web y optimizar tu experiencia en el sitio. Al aceptar nuestro uso de cookies, tus datos se agruparán con los datos de todos los demás usuarios.
+    </p>
+    <button onclick="acceptCookies()" class="w-full py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs transition-all">
+      Aceptar
+    </button>
+  </div>
+
+  <!-- Lógica JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Transición suave al cambiar entre subpáginas */
+.page-view {
+  animation: fadeInPage 0.28s ease-out;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botones de navegación activos e inactivos */
+.nav-btn {
+  color: #334155;
+}
+
+.nav-btn:hover {
+  background-color: #f1f5f9;
+  color: #0c4178;
+}
+
+.nav-btn.active {
+  background-color: #eff6ff;
+  color: #0c4178;
+}
+
+/* Botones de categorías del catálogo de Normas */
+.norm-cat-btn {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.norm-cat-btn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.norm-cat-btn.active {
+  background-color: #0c4178;
+  color: #ffffff;
+}
